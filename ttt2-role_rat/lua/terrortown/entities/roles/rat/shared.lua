@@ -109,7 +109,7 @@ if SERVER then
   -- Remove wallhacks when the rat dies
 	hook.Add("TTTEndRound", "RatRoundEnd", function()
     for _, v in ipairs(player.GetAll()) do
-      if v:GetSubRole() == ROLE_RAT then
+      if v:GetSubRole() == ROLE_RAT or v:GetBaseRole() == ROLE_TRAITOR then
         v:RemoveMarkerVision("player_rat")
       end
     end
